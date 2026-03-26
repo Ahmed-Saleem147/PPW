@@ -16,6 +16,7 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
       background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.06);
       transition: box-shadow 0.3s;
+      border-bottom: 3px solid #0D2C54;
     }
     nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.12); }
     .nav-inner {
@@ -46,21 +47,25 @@
     .nav-cta:hover { background: #EA6C00; }
     .hamburger {
       display: none; background: none; border: none; cursor: pointer;
-      padding: 8px; font-size: 24px; font-family: inherit;
+      padding: 8px; font-size: 28px; font-family: inherit;
+      color: #0D2C54; line-height: 1; min-width: 44px; min-height: 44px;
+      align-items: center; justify-content: center;
     }
     .mobile-menu {
-      display: none; background: #fff; border-top: 1px solid #E5E7EB; padding: 12px 24px 16px;
+      display: none; background: #fff; border-top: 1px solid #E5E7EB; padding: 8px 24px 20px;
     }
     .mobile-menu.open { display: block; }
     .mobile-link {
       display: block; width: 100%; text-align: left; background: none; border: none;
-      cursor: pointer; padding: 10px 0; font-size: 15px; font-weight: 500;
-      color: #374151; border-bottom: 1px solid #F3F4F6; font-family: inherit;
+      cursor: pointer; padding: 14px 0; font-size: 16px; font-weight: 600;
+      color: #0D2C54; border-bottom: 1px solid #F3F4F6; font-family: inherit;
+      min-height: 48px;
     }
+    .mobile-link:last-of-type { border-bottom: none; }
     .mobile-cta {
-      margin-top: 12px; background: #F97316; color: #fff; border: none;
-      border-radius: 8px; padding: 12px 20px; font-weight: 700; font-size: 14px;
-      cursor: pointer; width: 100%; font-family: inherit;
+      margin-top: 14px; background: #F97316; color: #fff; border: none;
+      border-radius: 8px; padding: 14px 20px; font-weight: 700; font-size: 16px;
+      cursor: pointer; width: 100%; font-family: inherit; min-height: 48px;
     }
 
     /* ── HERO ── */
@@ -362,9 +367,10 @@
     /* Mobile: up to 768px */
     @media (max-width: 768px) {
       /* Nav */
-      .desktop-nav { display: none; }
-      .hamburger { display: flex; }
+      .desktop-nav { display: none !important; }
+      .hamburger { display: flex !important; align-items: center; justify-content: center; }
       .nav-inner { height: 60px; }
+      .logo img { height: 44px !important; }
 
       /* Hero */
       #home { min-height: 100svh; padding-top: 60px; }
@@ -630,8 +636,8 @@
         <div class="contact-item-icon">✉️</div>
         <div>
           <div class="contact-item-label">EMAIL</div>
-          <div class="contact-item-val"><span style="user-select:text;">naanazee1@yahoo.com</span></div>
-          <div class="contact-item-val" style="margin-top:4px;"><span style="user-select:text;">ppw.ps@outlook.com</span></div>
+          <div class="contact-item-val"><span style="user-select:text;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="97f9f6f6f9f6edf2f2a6d7eef6fff8f8b9f4f8fa">[email&#160;protected]</a></span></div>
+          <div class="contact-item-val" style="margin-top:4px;"><span style="user-select:text;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fc8c8c8bd28c8fbc93898890939397d29f9391">[email&#160;protected]</a></span></div>
         </div>
       </div>
       <div class="contact-item">
@@ -696,6 +702,53 @@
       <div>
         <div class="footer-col-title">Contact</div>
         <div class="footer-link">001 (929) 455-916</div>
-        <div class="footer-link"><span style="user-select:text;">naanazee1@yahoo.com</span></div>
+            <div class="footer-link"><span style="user-select:text;">naanazee1@yahoo.com</span></div>
         <div class="footer-link"><span style="user-select:text;">ppw.ps@outlook.com</span></div>
-        <div class="footer-link">Bronx NY 10453</div
+        <div class="footer-link">Bronx NY 10453</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2025 PPW Professional Services LLC. All rights reserved.</p>
+      <div class="footer-legal">
+        <span>Privacy Policy</span>
+        <span>Terms of Service</span>
+        <span>Sitemap</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function scrollTo(id) {
+    var el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('mobileMenu').classList.remove('open');
+  }
+
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 20) {
+      document.getElementById('navbar').classList.add('scrolled');
+    } else {
+      document.getElementById('navbar').classList.remove('scrolled');
+    }
+  });
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    var form = document.getElementById('contactForm');
+    var success = document.getElementById('successMsg');
+    form.style.display = 'none';
+    success.classList.add('show');
+    setTimeout(function() {
+      success.classList.remove('show');
+      form.style.display = 'block';
+      form.reset();
+    }, 3500);
+  }
+</script>
+</body>
+</html>
