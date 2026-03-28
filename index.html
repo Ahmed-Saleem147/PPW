@@ -2,21 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PPW Professional Services LLC – Cleaning Services</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-    body { font-family: 'Segoe UI', system-ui, sans-serif; color: #1F2937; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-    button, a { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
-    img { max-width: 100%; height: auto; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; color: #1F2937; overflow-x: hidden; }
 
     /* ── NAVBAR ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
       background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.06);
       transition: box-shadow 0.3s;
-      border-bottom: 3px solid #0D2C54;
     }
     nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.12); }
     .nav-inner {
@@ -47,25 +44,21 @@
     .nav-cta:hover { background: #EA6C00; }
     .hamburger {
       display: none; background: none; border: none; cursor: pointer;
-      padding: 8px; font-size: 28px; font-family: inherit;
-      color: #0D2C54; line-height: 1; min-width: 44px; min-height: 44px;
-      align-items: center; justify-content: center;
+      padding: 8px; font-size: 24px; font-family: inherit;
     }
     .mobile-menu {
-      display: none; background: #fff; border-top: 1px solid #E5E7EB; padding: 8px 24px 20px;
+      display: none; background: #fff; border-top: 1px solid #E5E7EB; padding: 12px 24px 16px;
     }
     .mobile-menu.open { display: block; }
     .mobile-link {
       display: block; width: 100%; text-align: left; background: none; border: none;
-      cursor: pointer; padding: 14px 0; font-size: 16px; font-weight: 600;
-      color: #0D2C54; border-bottom: 1px solid #F3F4F6; font-family: inherit;
-      min-height: 48px;
+      cursor: pointer; padding: 10px 0; font-size: 15px; font-weight: 500;
+      color: #374151; border-bottom: 1px solid #F3F4F6; font-family: inherit;
     }
-    .mobile-link:last-of-type { border-bottom: none; }
     .mobile-cta {
-      margin-top: 14px; background: #F97316; color: #fff; border: none;
-      border-radius: 8px; padding: 14px 20px; font-weight: 700; font-size: 16px;
-      cursor: pointer; width: 100%; font-family: inherit; min-height: 48px;
+      margin-top: 12px; background: #F97316; color: #fff; border: none;
+      border-radius: 8px; padding: 12px 20px; font-weight: 700; font-size: 14px;
+      cursor: pointer; width: 100%; font-family: inherit;
     }
 
     /* ── HERO ── */
@@ -76,7 +69,7 @@
     }
     .hero-bg-img {
       position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
-      object-position: 70% center;
+      object-position: right center;
     }
     .hero-overlay {
       position: absolute; inset: 0;
@@ -353,96 +346,21 @@
     .footer-legal span:hover { color: #F97316; }
 
     /* ── RESPONSIVE ── */
-
-    /* Tablet: 768px–1024px */
-    @media (max-width: 1024px) {
-      .hero-inner { padding: 60px 24px 60px; }
-      .why-grid { grid-template-columns: repeat(2, 1fr); }
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
-      .contact-inner { grid-template-columns: 1fr; gap: 40px; }
-      .stats-row { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    /* Mobile: up to 768px */
     @media (max-width: 768px) {
-      /* Nav */
-      .desktop-nav { display: none !important; }
-      .hamburger { display: flex !important; align-items: center; justify-content: center; }
-      .nav-inner { height: 60px; }
-      .logo img { height: 44px !important; }
-
-      /* Hero */
-      #home { min-height: 100svh; padding-top: 60px; }
-      .hero-inner { padding: 40px 20px 60px; }
-      .hero-content { max-width: 100%; }
-      .hero-h1 { font-size: clamp(34px, 8vw, 52px); }
-      .hero-h1-orange { font-size: clamp(34px, 8vw, 52px); }
-      .hero-sub { font-size: 15px; margin-bottom: 24px; }
-      .hero-btns { flex-direction: column; gap: 12px; }
-      .hero-btns .btn-primary,
-      .hero-btns .btn-outline { width: 100%; text-align: center; padding: 14px 20px; }
-      .contact-strip { width: 100%; box-sizing: border-box; }
-      .contact-strip-number { font-size: 17px; }
-      .checklist { margin-bottom: 28px; }
-      .hero-overlay {
-        background: linear-gradient(to bottom, rgba(13,44,84,0.85) 0%, rgba(13,44,84,0.70) 60%, rgba(13,44,84,0.50) 100%);
-      }
-
-      /* Sections general */
-      #services,
-      #about,
-      .before-after,
-      #testimonials,
-      #contact { padding: 64px 20px; }
-      .promo { padding: 48px 20px; }
-
-      /* Services */
-      .services-grid { grid-template-columns: 1fr; gap: 20px; }
-      .services-header { margin-bottom: 40px; }
-
-      /* Why us */
-      .why-grid { grid-template-columns: 1fr; gap: 20px; }
-      .why-header { margin-bottom: 40px; }
-      .stats-row { grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 36px; }
-      .stat-num { font-size: 28px; }
-
-      /* Promo */
-      .promo-inner { flex-direction: column; text-align: center; gap: 24px; }
-      .promo-title { font-size: clamp(20px, 5vw, 30px); }
-      .promo-off { font-size: clamp(40px, 10vw, 56px); }
-      .promo-phone { font-size: clamp(22px, 6vw, 36px); }
-      .btn-dark { width: 100%; }
-
-      /* Contact */
-      .contact-inner { grid-template-columns: 1fr; gap: 36px; }
-      .contact-eyebrow { font-size: clamp(26px, 6vw, 36px); }
-      .contact-form-box { padding: 28px 20px; }
-
-      /* Footer */
-      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
-      .footer-bottom { flex-direction: column; text-align: center; gap: 12px; }
-      .footer-legal { justify-content: center; flex-wrap: wrap; gap: 14px; }
-
-      /* Section headings */
-      .section-title { font-size: clamp(26px, 6vw, 38px); }
-      .section-sub { font-size: 14px; }
+      .desktop-nav { display: none; }
+      .hamburger { display: flex; }
     }
-
-    /* Small phones: up to 480px */
-    @media (max-width: 480px) {
-      .hero-inner { padding: 32px 16px 48px; }
-      #services, #about, #contact { padding: 52px 16px; }
-      .promo { padding: 40px 16px; }
-      .stats-row { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-      .stat-box { padding: 16px 10px; }
-      .stat-num { font-size: 24px; }
-      .check-label { font-size: 14px; }
-      .why-card { padding: 24px 20px; }
-      .contact-form-box { padding: 24px 16px; border-radius: 16px; }
-      .footer-inner { padding: 40px 16px 24px; }
-      .contact-strip { flex-direction: column; text-align: center; gap: 10px; }
-      .hero-badge { font-size: 11px; padding: 5px 12px; }
+    @media (max-width: 900px) {
+      .hero-content { max-width: 100%; }
+      .contact-inner { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .promo-inner { flex-direction: column; text-align: center; }
+      .ba-grid { grid-template-columns: 1fr; }
+      .ba-panel + .ba-panel img { height: 260px; }
     }
   </style>
 </head>
@@ -490,11 +408,11 @@
       <p class="hero-sub">Reliable Residential &amp; Commercial Cleaning Services</p>
 
       <div class="checklist">
-        <div class="checklist-item"><div class="check-icon">✓</div><span class="check-label">Basic House Cleaning</span></div>
-        <div class="checklist-item"><div class="check-icon">✓</div><span class="check-label">Green Cleaning</span></div>
-        <div class="checklist-item"><div class="check-icon">✓</div><span class="check-label">Sanitization Services</span></div>
-        <div class="checklist-item"><div class="check-icon">✓</div><span class="check-label">Ceiling &amp; Wall Cleaning</span></div>
-        <div class="checklist-item"><div class="check-icon">✓</div><span class="check-label">Office Cleaning</span></div>
+        <div class="checklist-item"><div class="check-icon">&#x2713;</div><span class="check-label">Residential / Home Cleaning</span></div>
+        <div class="checklist-item"><div class="check-icon">&#x2713;</div><span class="check-label">Office Cleaning</span></div>
+        <div class="checklist-item"><div class="check-icon">&#x2713;</div><span class="check-label">Commercial Cleaning</span></div>
+        <div class="checklist-item"><div class="check-icon">&#x2713;</div><span class="check-label">Move-In / Move-Out Cleaning</span></div>
+        <div class="checklist-item"><div class="check-icon">&#x2713;</div><span class="check-label">Deep Cleaning</span></div>
       </div>
 
       <div class="hero-btns">
@@ -522,54 +440,36 @@
       <p class="section-sub" style="color:#6B7280;">From homes to offices, we deliver spotless results every time.</p>
     </div>
     <div class="services-grid">
-      <div class="service-card">
-        <div class="service-body">
-          <div class="service-icon-top">🏠</div>
-          <div class="service-title">Basic House Cleaning</div>
-          <div class="service-desc">Complete residential cleaning tailored to your schedule and preferences.</div>
-          <button class="btn-book" onclick="scrollTo('contact')">Book Now →</button>
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-body">
-          <div class="service-icon-top">🏢</div>
-          <div class="service-title">Office Cleaning</div>
-          <div class="service-desc">Professional workspace sanitization keeping your team healthy and productive.</div>
-          <button class="btn-book" onclick="scrollTo('contact')">Book Now →</button>
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-body">
-          <div class="service-icon-top">✨</div>
-          <div class="service-title">Deep Cleaning</div>
-          <div class="service-desc">Thorough top-to-bottom cleaning for move-ins, move-outs, and seasonal resets.</div>
-          <button class="btn-book" onclick="scrollTo('contact')">Book Now →</button>
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-body">
-          <div class="service-icon-top">🌿</div>
-          <div class="service-title">Green Cleaning</div>
-          <div class="service-desc">Eco-friendly solutions that are safe for your family, pets, and the planet.</div>
-          <button class="btn-book" onclick="scrollTo('contact')">Book Now →</button>
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-body">
-          <div class="service-icon-top">🧴</div>
-          <div class="service-title">Sanitization Services</div>
-          <div class="service-desc">Hospital-grade disinfection targeting high-touch areas and surfaces.</div>
-          <button class="btn-book" onclick="scrollTo('contact')">Book Now →</button>
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-body">
-          <div class="service-icon-top">🪟</div>
-          <div class="service-title">Ceiling &amp; Wall Cleaning</div>
-          <div class="service-desc">Removing dust, cobwebs, and stains from every corner and surface.</div>
-          <button class="btn-book" onclick="scrollTo('contact')">Book Now →</button>
-        </div>
-      </div>
+      <div class="service-card"><div class="service-body">
+        <div class="service-icon-top">&#x1F3E0;</div>
+        <div class="service-title">Residential / Home Cleaning</div>
+        <div class="service-desc">Professional home cleaning tailored to your schedule &#8212; kitchens, bathrooms, bedrooms and more.</div>
+        <button class="btn-book" onclick="bookService('residential')">Book Now &#x2192;</button>
+      </div></div>
+      <div class="service-card"><div class="service-body">
+        <div class="service-icon-top">&#x1F3E2;</div>
+        <div class="service-title">Office Cleaning</div>
+        <div class="service-desc">Reliable office cleaning keeping your workspace hygienic, organized, and ready for business every day.</div>
+        <button class="btn-book" onclick="bookService('office')">Book Now &#x2192;</button>
+      </div></div>
+      <div class="service-card"><div class="service-body">
+        <div class="service-icon-top">&#x1F3D7;&#xFE0F;</div>
+        <div class="service-title">Commercial Cleaning</div>
+        <div class="service-desc">Comprehensive cleaning for retail spaces, warehouses, and commercial facilities of all sizes.</div>
+        <button class="btn-book" onclick="bookService('commercial')">Book Now &#x2192;</button>
+      </div></div>
+      <div class="service-card"><div class="service-body">
+        <div class="service-icon-top">&#x1F4E6;</div>
+        <div class="service-title">Move-In / Move-Out Cleaning</div>
+        <div class="service-desc">Thorough cleaning for a smooth transition &#8212; leaving your old space spotless or new home move-in ready.</div>
+        <button class="btn-book" onclick="bookService('moveinout')">Book Now &#x2192;</button>
+      </div></div>
+      <div class="service-card"><div class="service-body">
+        <div class="service-icon-top">&#x2728;</div>
+        <div class="service-title">Deep Cleaning</div>
+        <div class="service-desc">Intensive top-to-bottom cleaning targeting every corner, surface, and hard-to-reach area in your space.</div>
+        <button class="btn-book" onclick="bookService('deep')">Book Now &#x2192;</button>
+      </div></div>
     </div>
   </div>
 </section>
@@ -636,8 +536,8 @@
         <div class="contact-item-icon">✉️</div>
         <div>
           <div class="contact-item-label">EMAIL</div>
-          <div class="contact-item-val"><span style="user-select:text;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="97f9f6f6f9f6edf2f2a6d7eef6fff8f8b9f4f8fa">[email&#160;protected]</a></span></div>
-          <div class="contact-item-val" style="margin-top:4px;"><span style="user-select:text;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fc8c8c8bd28c8fbc93898890939397d29f9391">[email&#160;protected]</a></span></div>
+          <div class="contact-item-val">naanazee1@yahoo.com</div>
+          <div class="contact-item-val" style="margin-top:4px;">ppw.ps@outlook.com</div>
         </div>
       </div>
       <div class="contact-item">
@@ -646,12 +546,13 @@
       </div>
     </div>
     <div class="contact-form-box">
-      <div class="form-title">Get a Free Quote</div>
-      <div class="form-sub">We'll respond within 2 hours during business hours.</div>
-      <div class="success-msg" id="successMsg">
-        <div class="success-emoji">✅</div>
-        <div class="success-title">Message Sent!</div>
-        <p class="success-sub">We'll get back to you within 2 hours.</p>
+      <div id="formBadge" style="display:none;background:#FEF3EB;border:1px solid #FDBA74;border-radius:50px;padding:5px 14px;font-size:12px;font-weight:700;color:#F97316;margin-bottom:14px;"></div>
+      <div class="form-title" id="formTitle">Get a Free Quote</div>
+      <div class="form-sub" id="formSub">Fill in your details and we will respond within 2 hours.</div>
+      <div id="successMsg" style="display:none;text-align:center;padding:40px 0;">
+        <div style="font-size:48px;margin-bottom:16px;">&#x2705;</div>
+        <div style="color:#0D2C54;font-weight:800;font-size:20px;margin-bottom:8px;">Request Sent!</div>
+        <p style="color:#6B7280;font-size:14px;">We will contact you within 2 hours during business hours.</p>
       </div>
       <form id="contactForm" onsubmit="handleSubmit(event)">
         <div class="form-group">
@@ -659,14 +560,19 @@
           <input type="text" class="form-input" placeholder="John Doe" required />
         </div>
         <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <input type="tel" class="form-input" placeholder="(929) 000-0000" required />
+        </div>
+        <div class="form-group">
           <label class="form-label">Email Address</label>
           <input type="email" class="form-input" placeholder="your@email.com" required />
         </div>
+        <div id="serviceQuestions"></div>
         <div class="form-group" style="margin-bottom:24px;">
-          <label class="form-label">Message</label>
-          <textarea class="form-input" rows="4" placeholder="Describe your cleaning needs..." required></textarea>
+          <label class="form-label">Additional Notes</label>
+          <textarea class="form-input" rows="3" placeholder="Any other details we should know..."></textarea>
         </div>
-        <button type="submit" class="btn-submit">Send Message →</button>
+        <button type="submit" class="btn-submit">Send Request &#x2192;</button>
       </form>
     </div>
   </div>
@@ -686,11 +592,11 @@
       </div>
       <div>
         <div class="footer-col-title">Services</div>
-        <div class="footer-link">House Cleaning</div>
+        <div class="footer-link">Residential / Home Cleaning</div>
         <div class="footer-link">Office Cleaning</div>
+        <div class="footer-link">Commercial Cleaning</div>
+        <div class="footer-link">Move-In / Move-Out Cleaning</div>
         <div class="footer-link">Deep Cleaning</div>
-        <div class="footer-link">Green Cleaning</div>
-        <div class="footer-link">Sanitization</div>
       </div>
       <div>
         <div class="footer-col-title">Company</div>
@@ -702,53 +608,162 @@
       <div>
         <div class="footer-col-title">Contact</div>
         <div class="footer-link">001 (929) 455-916</div>
-            <div class="footer-link"><span style="user-select:text;">naanazee1@yahoo.com</span></div>
-        <div class="footer-link"><span style="user-select:text;">ppw.ps@outlook.com</span></div>
-        <div class="footer-link">Bronx NY 10453</div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p class="footer-copy">&copy; 2025 PPW Professional Services LLC. All rights reserved.</p>
-      <div class="footer-legal">
-        <span>Privacy Policy</span>
-        <span>Terms of Service</span>
-        <span>Sitemap</span>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script>
+        <div class="footer-link">naanazee1@yahoo.com</div>
+        <div class="footer-link">ppw.ps@outlook.com</div>
+        <div class="footer-link">Bronx NY 10453</di<script>
+  /* ── Navigation ── */
   function scrollTo(id) {
     var el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
     document.getElementById('mobileMenu').classList.remove('open');
   }
-
   function toggleMenu() {
     document.getElementById('mobileMenu').classList.toggle('open');
   }
-
   window.addEventListener('scroll', function() {
-    if (window.scrollY > 20) {
-      document.getElementById('navbar').classList.add('scrolled');
-    } else {
-      document.getElementById('navbar').classList.remove('scrolled');
-    }
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
   });
 
+  /* ── Service-specific questions ── */
+  var serviceData = {
+    residential: {
+      label: 'Residential / Home Cleaning',
+      title: 'Book: Residential / Home Cleaning',
+      sub: 'Tell us about your home so we can give you an accurate quote.',
+      questions: [
+        { id: 'homeType', label: 'Type of Home', tag: 'select', options: ['Select...','Apartment','House','Condo','Townhouse','Other'] },
+        { id: 'bedrooms', label: 'Number of Bedrooms', tag: 'select', options: ['Select...','Studio','1 Bedroom','2 Bedrooms','3 Bedrooms','4 Bedrooms','5+ Bedrooms'] },
+        { id: 'bathrooms', label: 'Number of Bathrooms', tag: 'select', options: ['Select...','1','2','3','4+'] },
+        { id: 'sqft', label: 'Approximate Square Footage', tag: 'select', options: ['Select...','Under 500 sq ft','500-1,000 sq ft','1,000-2,000 sq ft','2,000-3,000 sq ft','3,000+ sq ft'] },
+        { id: 'frequency', label: 'Cleaning Frequency', tag: 'select', options: ['Select...','One-time','Weekly','Bi-weekly','Monthly'] },
+        { id: 'preferDate', label: 'Preferred Date', tag: 'input', type: 'date' },
+        { id: 'pets', label: 'Do you have pets?', tag: 'select', options: ['Select...','No','Yes - cats','Yes - dogs','Yes - other'] }
+      ]
+    },
+    office: {
+      label: 'Office Cleaning',
+      title: 'Book: Office Cleaning',
+      sub: 'Share your office details and we will tailor a cleaning plan for you.',
+      questions: [
+        { id: 'officeSize', label: 'Office Size', tag: 'select', options: ['Select...','Under 500 sq ft','500-1,000 sq ft','1,000-2,500 sq ft','2,500-5,000 sq ft','5,000+ sq ft'] },
+        { id: 'numRooms', label: 'Number of Offices / Rooms', tag: 'select', options: ['Select...','1-5','6-10','11-20','21-50','50+'] },
+        { id: 'numBathrooms', label: 'Number of Restrooms', tag: 'select', options: ['Select...','1','2','3','4','5+'] },
+        { id: 'frequency', label: 'Cleaning Frequency', tag: 'select', options: ['Select...','Daily','3x per week','Weekly','Bi-weekly','Monthly','One-time'] },
+        { id: 'afterHours', label: 'Preferred Cleaning Time', tag: 'select', options: ['Select...','During business hours','After hours','Weekends only','Flexible'] },
+        { id: 'preferDate', label: 'Preferred Start Date', tag: 'input', type: 'date' },
+        { id: 'specialAreas', label: 'Special Areas to Clean', tag: 'input', type: 'text', placeholder: 'e.g. break room, server room, reception...' }
+      ]
+    },
+    commercial: {
+      label: 'Commercial Cleaning',
+      title: 'Book: Commercial Cleaning',
+      sub: 'Tell us about your commercial space and we will build a custom plan.',
+      questions: [
+        { id: 'bizType', label: 'Type of Business', tag: 'select', options: ['Select...','Retail Store','Warehouse','Restaurant','Gym / Fitness','Medical / Clinic','School / Education','Industrial','Other'] },
+        { id: 'totalSqft', label: 'Total Square Footage', tag: 'select', options: ['Select...','Under 1,000 sq ft','1,000-5,000 sq ft','5,000-10,000 sq ft','10,000-25,000 sq ft','25,000+ sq ft'] },
+        { id: 'frequency', label: 'Cleaning Frequency', tag: 'select', options: ['Select...','Daily','3x per week','Weekly','Bi-weekly','Monthly','One-time deep clean'] },
+        { id: 'cleanTime', label: 'Preferred Cleaning Time', tag: 'select', options: ['Select...','Before opening hours','After closing hours','During off-peak hours','Weekends','Flexible'] },
+        { id: 'services', label: 'Services Needed', tag: 'input', type: 'text', placeholder: 'e.g. floor waxing, pressure washing, window cleaning...' },
+        { id: 'preferDate', label: 'Preferred Start Date', tag: 'input', type: 'date' }
+      ]
+    },
+    moveinout: {
+      label: 'Move-In / Move-Out Cleaning',
+      title: 'Book: Move-In / Move-Out Cleaning',
+      sub: 'Help us understand your move so we can prepare the right team.',
+      questions: [
+        { id: 'moveType', label: 'Type of Move', tag: 'select', options: ['Select...','Moving Out (leaving)','Moving In (arriving)','Both (full turnover)'] },
+        { id: 'propertyType', label: 'Property Type', tag: 'select', options: ['Select...','Apartment','House','Condo','Townhouse','Commercial Space','Other'] },
+        { id: 'bedrooms', label: 'Number of Bedrooms', tag: 'select', options: ['Select...','Studio','1 Bedroom','2 Bedrooms','3 Bedrooms','4 Bedrooms','5+ Bedrooms'] },
+        { id: 'bathrooms', label: 'Number of Bathrooms', tag: 'select', options: ['Select...','1','2','3','4+'] },
+        { id: 'furnished', label: 'Is the property furnished?', tag: 'select', options: ['Select...','Fully furnished','Partially furnished','Empty / Unfurnished'] },
+        { id: 'moveDate', label: 'Move Date', tag: 'input', type: 'date' },
+        { id: 'cleanDate', label: 'Preferred Cleaning Date', tag: 'input', type: 'date' },
+        { id: 'extras', label: 'Extra Services Needed', tag: 'input', type: 'text', placeholder: 'e.g. carpet cleaning, appliance cleaning, window washing...' }
+      ]
+    },
+    deep: {
+      label: 'Deep Cleaning',
+      title: 'Book: Deep Cleaning',
+      sub: 'Deep cleaning covers every inch. Tell us what needs the most attention.',
+      questions: [
+        { id: 'propertyType', label: 'Property Type', tag: 'select', options: ['Select...','Apartment','House','Condo','Office','Commercial','Other'] },
+        { id: 'bedrooms', label: 'Number of Bedrooms', tag: 'select', options: ['Select...','Studio','1 Bedroom','2 Bedrooms','3 Bedrooms','4 Bedrooms','5+ Bedrooms'] },
+        { id: 'bathrooms', label: 'Number of Bathrooms', tag: 'select', options: ['Select...','1','2','3','4+'] },
+        { id: 'sqft', label: 'Approximate Square Footage', tag: 'select', options: ['Select...','Under 500 sq ft','500-1,000 sq ft','1,000-2,000 sq ft','2,000-3,000 sq ft','3,000+ sq ft'] },
+        { id: 'lastCleaned', label: 'Last Professional Clean', tag: 'select', options: ['Select...','Never','Over 1 year ago','6-12 months ago','3-6 months ago','1-3 months ago'] },
+        { id: 'focusAreas', label: 'Areas Needing Most Attention', tag: 'input', type: 'text', placeholder: 'e.g. kitchen, bathrooms, baseboards, appliances...' },
+        { id: 'preferDate', label: 'Preferred Date', tag: 'input', type: 'date' },
+        { id: 'condition', label: 'Current Condition of Space', tag: 'select', options: ['Select...','Normal wear','Heavily used / dirty','Post-construction','Post-event','Other'] }
+      ]
+    }
+  };
+
+  function buildField(q) {
+    var h = '<div class="form-group"><label class="form-label">' + q.label + '</label>';
+    if (q.tag === 'select') {
+      h += '<select class="form-input" name="' + q.id + '" required><option value="">' + q.options[0] + '</option>';
+      for (var i = 1; i < q.options.length; i++) {
+        h += '<option value="' + q.options[i] + '">' + q.options[i] + '</option>';
+      }
+      h += '</select>';
+    } else {
+      h += '<input type="' + (q.type || 'text') + '" class="form-input" name="' + q.id + '"' + (q.placeholder ? ' placeholder="' + q.placeholder + '"' : '') + ' />';
+    }
+    return h + '</div>';
+  }
+
+  function bookService(key) {
+    var data = serviceData[key];
+    if (!data) return;
+
+    var badge = document.getElementById('formBadge');
+    badge.textContent = data.label;
+    badge.style.display = 'inline-block';
+
+    document.getElementById('formTitle').textContent = data.title;
+    document.getElementById('formSub').textContent = data.sub;
+
+    var container = document.getElementById('serviceQuestions');
+    container.innerHTML = '';
+    data.questions.forEach(function(q) { container.innerHTML += buildField(q); });
+
+    container.querySelectorAll('.form-input').forEach(function(el) {
+      el.addEventListener('focus', function() { this.style.borderColor = '#F97316'; });
+      el.addEventListener('blur', function() { this.style.borderColor = '#E5E7EB'; });
+    });
+
+    var el = document.getElementById('contact');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  /* ── Form submit ── */
   function handleSubmit(e) {
     e.preventDefault();
-    var form = document.getElementById('contactForm');
-    var success = document.getElementById('successMsg');
-    form.style.display = 'none';
-    success.classList.add('show');
+    document.getElementById('contactForm').style.display = 'none';
+    document.getElementById('formBadge').style.display = 'none';
+    document.getElementById('formTitle').style.display = 'none';
+    document.getElementById('formSub').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
     setTimeout(function() {
-      success.classList.remove('show');
-      form.style.display = 'block';
-      form.reset();
-    }, 3500);
+      document.getElementById('successMsg').style.display = 'none';
+      document.getElementById('contactForm').style.display = 'block';
+      document.getElementById('formTitle').style.display = 'block';
+      document.getElementById('formSub').style.display = 'block';
+      document.getElementById('serviceQuestions').innerHTML = '';
+      document.getElementById('formBadge').style.display = 'none';
+      document.getElementById('formBadge').textContent = '';
+      document.getElementById('formTitle').textContent = 'Get a Free Quote';
+      document.getElementById('formSub').textContent = 'Fill in your details and we will respond within 2 hours.';
+      document.getElementById('contactForm').reset();
+    }, 4000);
   }
+
+  /* ── Input focus styles ── */
+  document.querySelectorAll('.form-input').forEach(function(el) {
+    el.addEventListener('focus', function() { this.style.borderColor = '#F97316'; });
+    el.addEventListener('blur', function() { this.style.borderColor = '#E5E7EB'; });
+  });
 </script>
 </body>
 </html>
