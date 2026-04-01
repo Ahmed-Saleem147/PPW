@@ -143,9 +143,26 @@
     .section-sub { font-size: 16px; max-width: 500px; margin: 0 auto; }
 
     /* ── SERVICES ── */
-    #services { background: #F3F4F6; padding: 100px 24px; }
-    .services-inner { max-width: 1200px; margin: 0 auto; }
-    .services-header { text-align: center; margin-bottom: 64px; }
+    #services { position: relative; overflow: hidden; padding: 100px 24px; }
+    .services-bg-slide {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center center;
+      opacity: 0; transition: opacity 1.5s ease;
+    }
+    .services-bg-slide.active { opacity: 1; }
+    .services-bg-overlay {
+      position: absolute; inset: 0;
+      background: rgba(255, 255, 255, 0.28);
+    }
+    .services-inner { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; }
+    .services-header {
+      text-align: center; margin-bottom: 64px;
+      background: rgba(255,255,255,0.75);
+      border-radius: 16px; padding: 28px 32px;
+      backdrop-filter: blur(4px);
+      display: inline-block; width: 100%;
+      box-sizing: border-box;
+    }
     .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 28px; }
     .service-card {
       background: #fff; border-radius: 20px; overflow: hidden;
@@ -352,15 +369,56 @@
     }
     @media (max-width: 900px) {
       .hero-content { max-width: 100%; }
-      .contact-inner { grid-template-columns: 1fr; }
+      .contact-inner { grid-template-columns: 1fr; gap: 40px; }
       .stats-row { grid-template-columns: repeat(2, 1fr); }
       .footer-grid { grid-template-columns: 1fr 1fr; }
+      .why-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 600px) {
+      /* Layout */
       .footer-grid { grid-template-columns: 1fr; }
       .promo-inner { flex-direction: column; text-align: center; }
       .ba-grid { grid-template-columns: 1fr; }
-      .ba-panel + .ba-panel img { height: 260px; }
+      .ba-panel img { height: 240px; }
+      .why-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .test-grid { grid-template-columns: 1fr; }
+
+      /* Section spacing */
+      #services { padding: 60px 16px; }
+      #about { padding: 60px 16px; }
+      .before-after { padding: 60px 16px; }
+      #testimonials { padding: 60px 16px; }
+      #contact { padding: 60px 16px; }
+      .promo { padding: 48px 16px; }
+      footer { padding: 48px 16px 28px; }
+
+      /* Hero */
+      .hero-inner { padding: 48px 16px 60px; }
+      .hero-btns { flex-direction: column; }
+      .btn-primary, .btn-outline { width: 100%; text-align: center; }
+      .contact-strip { flex-direction: column; text-align: center; gap: 8px; }
+
+      /* Services header */
+      .services-header { padding: 20px 16px; }
+
+      /* Contact form */
+      .contact-form-box { padding: 28px 20px; }
+
+      /* Why cards */
+      .why-card { padding: 24px 20px; }
+
+      /* Stats */
+      .stat-num { font-size: 28px; }
+
+      /* Footer bottom */
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .footer-legal { justify-content: center; }
+    }
+    @media (max-width: 400px) {
+      .stats-row { grid-template-columns: 1fr 1fr; }
+      .nav-inner { padding: 0 14px; }
     }
   </style>
 </head>
@@ -378,7 +436,7 @@
       <button class="nav-link" onclick="scrollTo('services')">Services</button>
       <button class="nav-link" onclick="scrollTo('testimonials')">Testimonials</button>
       <button class="nav-link" onclick="scrollTo('contact')">Contact</button>
-      <button class="nav-cta" onclick="scrollTo('contact')">Get a Quote</button>
+      <button class="nav-cta" onclick="goToQuote()">Get a Quote</button>
     </div>
     <button class="hamburger" onclick="toggleMenu()">☰</button>
   </div>
@@ -388,7 +446,7 @@
     <button class="mobile-link" onclick="scrollTo('services')">Services</button>
     <button class="mobile-link" onclick="scrollTo('testimonials')">Testimonials</button>
     <button class="mobile-link" onclick="scrollTo('contact')">Contact</button>
-    <button class="mobile-cta" onclick="scrollTo('contact')">Get a Quote</button>
+    <button class="mobile-cta" onclick="goToQuote()">Get a Quote</button>
   </div>
 </nav>
 
@@ -416,7 +474,7 @@
       </div>
 
       <div class="hero-btns">
-        <button class="btn-primary" onclick="scrollTo('contact')">Get a Free Quote!</button>
+        <button class="btn-primary" onclick="goToQuote()">Get a Free Quote!</button>
         <button class="btn-outline" onclick="scrollTo('services')">Our Services</button>
       </div>
 
@@ -433,6 +491,10 @@
 
 <!-- ═══════════════════════════════ SERVICES ═══════════════════════════════ -->
 <section id="services">
+  <div class="services-bg-slide" style="background-image:url('Gemini_Generated_Image_oexbu5oexbu5oexb.png')"></div>
+  <div class="services-bg-slide" style="background-image:url('Gemini_Generated_Image_z5d1jgz5d1jgz5d1.png')"></div>
+  <div class="services-bg-slide" style="background-image:url('Gemini_Generated_Image_m4tklum4tklum4tk.png')"></div>
+  <div class="services-bg-overlay"></div>
   <div class="services-inner">
     <div class="services-header">
       <span class="section-tag tag-orange">WHAT WE OFFER</span>
@@ -610,12 +672,30 @@
         <div class="footer-link">001 (929) 455-916</div>
         <div class="footer-link">naanazee1@yahoo.com</div>
         <div class="footer-link">ppw.ps@outlook.com</div>
-        <div class="footer-link">Bronx NY 10453</di<script>
+        <div class="footer-link">Bronx NY 10453</div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 PPW Professional Services LLC. All rights reserved.</div>
+  </footer>
+  <script>
   /* ── Navigation ── */
   function scrollTo(id) {
     var el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
     document.getElementById('mobileMenu').classList.remove('open');
+  }
+  function goToQuote() {
+    document.getElementById('formBadge').style.display = 'none';
+    document.getElementById('formBadge').textContent = '';
+    document.getElementById('formTitle').textContent = 'Get a Free Quote';
+    document.getElementById('formSub').textContent = 'Fill in your details and we will respond within 2 hours.';
+    document.getElementById('serviceQuestions').innerHTML = '';
+    document.getElementById('contactForm').reset();
+    document.getElementById('successMsg').style.display = 'none';
+    document.getElementById('contactForm').style.display = 'block';
+    document.getElementById('formTitle').style.display = 'block';
+    document.getElementById('formSub').style.display = 'block';
+    scrollTo('contact');
   }
   function toggleMenu() {
     document.getElementById('mobileMenu').classList.toggle('open');
@@ -764,6 +844,18 @@
     el.addEventListener('focus', function() { this.style.borderColor = '#F97316'; });
     el.addEventListener('blur', function() { this.style.borderColor = '#E5E7EB'; });
   });
+
+  /* ── Services background slideshow ── */
+  (function() {
+    var slides = document.querySelectorAll('.services-bg-slide');
+    var current = 0;
+    slides[current].classList.add('active');
+    setInterval(function() {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 5000);
+  })();
 </script>
 </body>
 </html>
